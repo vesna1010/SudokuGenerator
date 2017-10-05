@@ -6,36 +6,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
-<div class="sudoku">
-	<div class="table">
-		<c:forEach var="i" begin="0" end="6" step="3">
-			<div class="row">
-				<c:forEach var="j" begin="0" end="6" step="3">
-					<div class="cell">
-						<div class="table">
-							<c:forEach var="m" begin="${i}" end="${i+2}">
-								<div class="row">
-									<c:forEach var="n" begin="${j}" end="${j+2}">
-										<div class="cell">
-						                 <c:set var="key" value="${m+=''+=n}"></c:set>
-											<div class="div">${sudoku.map[key]}</div>
-										</div>
-									</c:forEach>
-								</div>
-							</c:forEach>
+	<div class="sudoku">
+		<div class="table">
+			<c:forEach var="i" begin="0" end="6" step="3">
+				<div class="row">
+					<c:forEach var="j" begin="0" end="6" step="3">
+						<div class="cell">
+							<div class="table">
+								<c:forEach var="m" begin="${i}" end="${i+2}">
+									<div class="row">
+										<c:forEach var="n" begin="${j}" end="${j+2}">
+											<div class="cell">
+												<c:set var="key" value="${m += '' += n}"></c:set>
+												<div class="div">${sudoku.map[key]}</div>
+											</div>
+										</c:forEach>
+									</div>
+								</c:forEach>
+							</div>
 						</div>
-					</div>
-				</c:forEach>
-			</div>
-		</c:forEach>
-		
+					</c:forEach>
+				</div>
+			</c:forEach>
 		</div>
-</div>
-<br>
-	<div class="sudoku"><button class="button" onclick="location.href='<c:url value="/sudoku"/>'">Generate
-			Sudoku</button></div>	
+	</div>
+	<br>
+	<div class="sudoku">
+		<button class="button"
+			onclick="location.href='<c:url value="/sudoku"/>'">Generate
+			Sudoku</button>
+	</div>
 </body>
 </html>
